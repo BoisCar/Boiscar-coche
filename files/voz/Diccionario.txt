@@ -1,0 +1,20 @@
+#JSGF V1.0;
+
+grammar sentence;
+
+public <sentence> = [<boiscar>][<sos>][<cancelar>][<pantallas>][<climatizador>]
+[<getTemperatura>][<curiosidad>];
+
+<todoElDiccionario> = (<numeros> | <temperatura> | <cancelar> | <pantallas> );
+<numeros> = ( 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 );
+<temperatura> = Temperatura;
+
+<boiscar> = Boiscar ( escuchame | <todoElDiccionario> );
+<sos> = Boiscar ( socorro | ayuda | <todoElDiccionario> );
+
+<cancelar> = Cancelar;
+<pantallas> = ( Mantenimiento | Musica | Climatizador | GPS | Menu );
+<climatizador> = ( (Subir | Bajar)  <temperatura>  <numeros>  grados);
+
+<getTemperatura> = ( <temperatura> actual );
+<curiosidad> =  ( Dato curioso );
